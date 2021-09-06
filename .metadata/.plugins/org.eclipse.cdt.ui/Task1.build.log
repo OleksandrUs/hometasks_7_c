@@ -1,0 +1,20 @@
+17:07:09 **** Incremental Build of configuration Debug for project Task1 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xC -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Task1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\_GL_ProCamp\hometasks_7_c\Task1\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Task1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Task1.elf
+ 
+arm-none-eabi-size   Task1.elf 
+arm-none-eabi-objdump -h -S  Task1.elf  > "Task1.list"
+arm-none-eabi-objcopy  -O binary  Task1.elf  "Task1.bin"
+   text	   data	    bss	    dec	    hex	filename
+  15988	     20	   1780	  17788	   457c	Task1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Task1.bin
+ 
+Finished building: Task1.list
+ 
+
+17:07:11 Build Finished. 0 errors, 0 warnings. (took 1s.420ms)
+
